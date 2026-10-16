@@ -1,0 +1,16 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  UsefulGenes -> /var/folders/05/cb8b85g10yj93df52n406_n00000gn/T/UsefulGenesTests-dvnf1a56/build/Umrae.UsefulGenes.dll
+  Tests -> /var/folders/05/cb8b85g10yj93df52n406_n00000gn/T/UsefulGenesTests-dvnf1a56/build/UsefulGenes.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.09
+Packaged DLL matches the tested source build.
+All production Harmony patches installed on the actual dependency methods.
+Every custom XML field exists in the installed game types.
+Squirter: shared events, all installed S16 toy thresholds, adult eligibility, deduplication, stack placement and real Scribe passed.
+Production, collection, eligibility, suppression/removal, wall gates and real Scribe round trips passed.
+PASS: 10222 checks against installed game, RJW and Lactation Expansion assemblies.

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ModMetaData>
+  <name>RJW Fluids and Solids</name>
+  <author>Umrae</author>
+  <packageId>umrae.usefulgenes</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <description>Biotech genes, DBH waste collection, throwable feces, urine and feces consumption precepts, and compatibility with Coffee’s milk beliefs. Includes Fecal walls, Permanent lactation and Squirter. Replaces DBH Collected Waste; disable the standalone version. Built for the installed RimWorld 1.7 runtime. Supports fragile smoothable stone-like walls, Progression research, Medieval Overhaul milk processing, and an optional separate breast-milk pipe network.</description>
+  <modDependencies>
+    <li>
+      <packageId>ludeon.rimworld.biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+    </li>
+    <li>
+      <packageId>rim.job.world</packageId>
+      <displayName>RimJobWorld</displayName>
+    </li>
+    <li>
+      <packageId>euterpe.milkytitfuck</packageId>
+      <displayName>Lactation Expansion</displayName>
+    </li>
+    <li>
+      <packageId>euclidean.s16.core</packageId>
+      <displayName>S16's Extension</displayName>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.ideology</packageId>
+      <displayName>Ideology</displayName>
+    </li>
+    <li>
+      <packageId>dubwise.dubsbadhygiene</packageId>
+      <displayName>Dubs Bad Hygiene</displayName>
+    </li>
+    <li>
+      <packageId>c0ffee.rjw.ideologyaddons</packageId>
+      <displayName>C0ffeeRIA</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>ludeon.rimworld.biotech</li>
+    <li>brrainz.harmony</li>
+    <li>rim.job.world</li>
+    <li>euterpe.milkytitfuck</li>
+    <li>vegapnk.rjw.genes</li>
+    <li>umrae.rjwstackcompatibility</li>
+    <li>euclidean.s16.core</li>
+    <li>ludeon.rimworld.ideology</li>
+    <li>dubwise.dubsbadhygiene</li>
+    <li>c0ffee.rjw.ideologyaddons</li>
+    <li>ferny.progressioncore</li>
+    <li>ferny.progressionstorage</li>
+    <li>ferny.progressionkitchen</li>
+    <li>ferny.progressiongenetics</li>
+    <li>ferny.progressionproduction</li>
+    <li>ferny.progressionagriculture</li>
+    <li>ferny.progressiontemperature</li>
+    <li>adaptive.storage.framework</li>
+    <li>vemp.pipenetwork</li>
+    <li>dankpyon.medieval.overhaul</li>
+    <li>robtrg.milkdrugs</li>
+    <li>rjw.unleashed.gastronomy</li>
+  </loadAfter>
+  <incompatibleWith>
+    <li>umrae.dbh.collectedwaste</li>
+  </incompatibleWith>
+</ModMetaData>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>UrineBottle</defName>
+		<label>urine bottle</label>
+		<description>A bottle of collected urine. It can be drunk when nothing else is available, poured onto a fire, or poured onto diggable soil as a weak fertilizer.</description>
+		<graphicData>
+			<texPath>DBH/Things/Resource/WaterBottles</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>25</stackLimit>
+		<tradeability>None</tradeability>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<thingCategories>
+			<li>Foods</li>
+			<li>Waste</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.4</MarketValue>
+			<Mass>0.4</Mass>
+			<Flammability>0.2</Flammability>
+			<DeteriorationRate>4</DeteriorationRate>
+			<Nutrition>0.01</Nutrition>
+			<Beauty>-12</Beauty>
+			<Cleanliness>-10</Cleanliness>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>8</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+			<li Class="CollectedWaste.CompProperties_UrineUses"/>
+		</comps>
+		<modExtensions>
+			<li Class="DubsBadHygiene.WaterExt">
+				<water>0.45</water>
+				<UseForWashing>false</UseForWashing>
+				<SeekForThirst>false</SeekForThirst>
+			</li>
+		</modExtensions>
+		<ingestible>
+			<preferability>NeverForNutrition</preferability>
+			<foodType>Fluid</foodType>
+			<tasteThought>DrankUrine</tasteThought>
+			<ingestSound>Ingest_Beer</ingestSound>
+			<ingestCommandString>Drink {0}</ingestCommandString>
+			<ingestReportString>Drinking {0}.</ingestReportString>
+			<baseIngestTicks>80</baseIngestTicks>
+			<chairSearchRadius>0</chairSearchRadius>
+			<tableDesired>false</tableDesired>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<nurseable>false</nurseable>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>Feces</defName>
+		<label>feces</label>
+		<description>Collected feces. A starving person can eat it. It can be thrown at a target, composted into biosolids, or refined into chemfuel. A direct hit deals 1 blunt damage and may cause vomiting. Range, vomiting chance and cooldown can be adjusted in mod settings.</description>
+		<graphicData>
+			<texPath>DBH/Things/Resource/bagSoil</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.7</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<tradeability>None</tradeability>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<thingCategories>
+			<li>Foods</li>
+			<li>Waste</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Mass>0.3</Mass>
+			<Flammability>0.4</Flammability>
+			<DeteriorationRate>6</DeteriorationRate>
+			<Nutrition>0.08</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+			<Beauty>-20</Beauty>
+			<Cleanliness>-25</Cleanliness>
+		</statBases>
+		<comps>
+            <li Class="Umrae.UsefulGenes.CompProperties_FecesThrow"/>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>5</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+			<foodType>Processed</foodType>
+			<tasteThought>AteFeces</tasteThought>
+			<ingestSound>RawMeat_Eat</ingestSound>
+			<ingestCommandString>Eat {0}</ingestCommandString>
+			<ingestReportString>Eating {0}.</ingestReportString>
+			<baseIngestTicks>120</baseIngestTicks>
+			<chairSearchRadius>0</chairSearchRadius>
+			<tableDesired>false</tableDesired>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<nurseable>false</nurseable>
+		</ingestible>
+	</ThingDef>
+</Defs>

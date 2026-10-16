@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef>
+		<defName>MakeBiosolidsFromFeces</defName>
+		<label>compost feces into biosolids</label>
+		<description>Turn collected feces into biosolids.</description>
+		<jobString>Composting feces into biosolids.</jobString>
+		<workAmount>800</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Feces</li>
+					</thingDefs>
+				</filter>
+				<count>8</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Feces</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Biosolids>4</Biosolids>
+		</products>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeChemfuelFromFeces</defName>
+		<label>make chemfuel from feces</label>
+		<description>Refine a batch of chemfuel from collected feces.</description>
+		<jobString>Refining chemfuel from feces.</jobString>
+		<workAmount>1600</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Feces</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Feces</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Chemfuel>10</Chemfuel>
+		</products>
+		<recipeUsers>
+			<li>BiofuelRefinery</li>
+		</recipeUsers>
+	</RecipeDef>
+</Defs>

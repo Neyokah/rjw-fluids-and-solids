@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<CRIALactationSettings.settings>RJW - C0ffee's RJW Ideology Addons - Lactation</CRIALactationSettings.settings>
+
+	<CRIALactation.massageCooldown>Massage Cooldown</CRIALactation.massageCooldown>
+	<CRIALactation.massageCooldownDesc>Default 0.3. Time between massages to stimulate lacation. 1 = A full day. Changing this number will not update existing cooldown Hediffs, it will only apply to new cooldown hediffs applied.</CRIALactation.massageCooldownDesc>
+
+	<CRIALactation.totalMassagesUntilLactation>Total Massages Needed</CRIALactation.totalMassagesUntilLactation>
+	<CRIALactation.totalMassagesUntilLactationDesc>Default 20. How many massages are required before lacation starts. Progress is saved as 0->1. Each time a massage happens the amount 1/total is added. Changing this value will not reset the current progress amount.</CRIALactation.totalMassagesUntilLactationDesc>
+
+	<CRIALactation.hucowBreastSizeBonus>Hucow Breast Size Increase</CRIALactation.hucowBreastSizeBonus>
+	<CRIALactation.hucowBreastSizeBonusDesc>Default 0.5. When turned into a hucow, this amount will get added to pawns existing breast size.</CRIALactation.hucowBreastSizeBonusDesc>
+
+	<CRIALactation.hucowBreastSizeMinimum>Hucow Breast Size Minimum</CRIALactation.hucowBreastSizeMinimum>
+	<CRIALactation.hucowBreastSizeMinimumDesc>Default 1.0. When turned into a hucow, this is the smallest that breasts will end up being.</CRIALactation.hucowBreastSizeMinimumDesc>
+	
+</LanguageData>

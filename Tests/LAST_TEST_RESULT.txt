@@ -1,0 +1,20 @@
+  Determining projects to restore...
+CSSM_ModuleLoad(): One or more parameters passed to a function were not valid.
+  All projects are up-to-date for restore.
+  UsefulGenes -> /var/folders/05/cb8b85g10yj93df52n406_n00000gn/T/UsefulGenesTests-u9po64cy/build/Umrae.UsefulGenes.dll
+  Tests -> /var/folders/05/cb8b85g10yj93df52n406_n00000gn/T/UsefulGenesTests-u9po64cy/build/UsefulGenes.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:21.20
+Packaged DLL matches the tested source build.
+All production Harmony patches installed on the actual dependency methods.
+Every custom XML field exists in the installed game types.
+Squirter: shared events, all installed S16 toy thresholds, adult eligibility, deduplication, stack placement and real Scribe passed.
+Collected waste transfers, beliefs, poisoning, hit policy, save migration and Coffee original definitions/consumption/stats passed.
+Sealed waste penalties, native storage definitions/patches, adjustable weapon policy and saved settings passed.
+Progression research, milk categories, separate pipe network, optional-mod absence and framework-held storage passed.
+Production, collection, eligibility, suppression/removal, wall gates and real Scribe round trips passed.
+PASS: 11071 checks against installed game, RJW and Lactation Expansion assemblies.

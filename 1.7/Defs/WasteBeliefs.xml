@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <IssueDef>
+    <defName>RFS_UrineConsumption</defName>
+    <label>urine consumption</label>
+    <iconPath>UI/Genes/UG_FecalWalls</iconPath>
+  </IssueDef>
+  <PreceptDef>
+    <defName>RFS_UrineDisapproved</defName>
+    <issue>RFS_UrineConsumption</issue>
+    <label>disapproved</label>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <description>Consuming urine is considered disapproved by this ideology.</description>
+    <modExtensions>
+      <li Class="Umrae.UsefulGenes.WasteBeliefExtension">
+        <resource>UrineBottle</resource>
+        <thought>RFS_UrineDisapprovedThought</thought>
+      </li>
+    </modExtensions>
+  </PreceptDef>
+  <ThoughtDef>
+    <defName>RFS_UrineDisapprovedThought</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>consumed urine</label>
+        <description>I consumed urine, which my beliefs regard as disapproved.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <PreceptDef>
+    <defName>RFS_UrineAcceptable</defName>
+    <issue>RFS_UrineConsumption</issue>
+    <label>acceptable</label>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <description>Consuming urine is considered acceptable by this ideology.</description>
+    <modExtensions>
+      <li Class="Umrae.UsefulGenes.WasteBeliefExtension">
+        <resource>UrineBottle</resource>
+      </li>
+    </modExtensions>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>RFS_UrineApproved</defName>
+    <issue>RFS_UrineConsumption</issue>
+    <label>approved</label>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <description>Consuming urine is considered approved by this ideology.</description>
+    <modExtensions>
+      <li Class="Umrae.UsefulGenes.WasteBeliefExtension">
+        <resource>UrineBottle</resource>
+        <thought>RFS_UrineApprovedThought</thought>
+      </li>
+    </modExtensions>
+  </PreceptDef>
+  <ThoughtDef>
+    <defName>RFS_UrineApprovedThought</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>enjoyed urine</label>
+        <description>I consumed urine, which my beliefs regard as approved.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <IssueDef>
+    <defName>RFS_FecesConsumption</defName>
+    <label>feces consumption</label>
+    <iconPath>UI/Genes/UG_FecalWalls</iconPath>
+  </IssueDef>
+  <PreceptDef>
+    <defName>RFS_FecesDisapproved</defName>
+    <issue>RFS_FecesConsumption</issue>
+    <label>disapproved</label>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <description>Consuming feces is considered disapproved by this ideology.</description>
+    <modExtensions>
+      <li Class="Umrae.UsefulGenes.WasteBeliefExtension">
+        <resource>Feces</resource>
+        <thought>RFS_FecesDisapprovedThought</thought>
+      </li>
+    </modExtensions>
+  </PreceptDef>
+  <ThoughtDef>
+    <defName>RFS_FecesDisapprovedThought</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>consumed feces</label>
+        <description>I consumed feces, which my beliefs regard as disapproved.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <PreceptDef>
+    <defName>RFS_FecesAcceptable</defName>
+    <issue>RFS_FecesConsumption</issue>
+    <label>acceptable</label>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <description>Consuming feces is considered acceptable by this ideology.</description>
+    <modExtensions>
+      <li Class="Umrae.UsefulGenes.WasteBeliefExtension">
+        <resource>Feces</resource>
+      </li>
+    </modExtensions>
+  </PreceptDef>
+  <PreceptDef>
+    <defName>RFS_FecesApproved</defName>
+    <issue>RFS_FecesConsumption</issue>
+    <label>approved</label>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <description>Consuming feces is considered approved by this ideology.</description>
+    <modExtensions>
+      <li Class="Umrae.UsefulGenes.WasteBeliefExtension">
+        <resource>Feces</resource>
+        <thought>RFS_FecesApprovedThought</thought>
+      </li>
+    </modExtensions>
+  </PreceptDef>
+  <ThoughtDef>
+    <defName>RFS_FecesApprovedThought</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>enjoyed feces</label>
+        <description>I consumed feces, which my beliefs regard as approved.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ShelfBase">
+    <defName>RFS_SealedWasteContainer</defName><label>sealed waste container</label>
+    <description>A lidded container for up to three stacks of collected urine and feces. Suppresses the contents' beauty and cleanliness penalties. Normal hauling and storage settings apply. Prevents outdoor deterioration, but does not refrigerate its contents or stop rot.</description>
+    <modExtensions><li Class="Umrae.UsefulGenes.SealedWasteContainerExtension"/></modExtensions>
+    <thingClass>Umrae.UsefulGenes.Building_SealedWasteContainer</thingClass>
+    <graphicData><texPath>Things/Building/SealedWasteContainer</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>Cutout</shaderType><drawSize>1</drawSize></graphicData>
+    <designationCategory>Hygiene</designationCategory><size>(1,1)</size><rotatable>false</rotatable>
+    <costStuffCount>25</costStuffCount><researchPrerequisites Inherit="False"/>
+    <statBases><MaxHitPoints>120</MaxHitPoints><Mass>10</Mass><WorkToBuild>650</WorkToBuild><Beauty>0</Beauty><Cleanliness>0</Cleanliness></statBases>
+    <building>
+      <maxItemsInCell>3</maxItemsInCell><preventDeteriorationOnTop>true</preventDeteriorationOnTop><ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <storageGroupTag>RFS_SealedWaste</storageGroupTag>
+      <fixedStorageSettings><filter><thingDefs><li>Feces</li><li>UrineBottle</li></thingDefs></filter></fixedStorageSettings>
+      <defaultStorageSettings><priority>Preferred</priority><filter><thingDefs><li>Feces</li><li>UrineBottle</li></thingDefs></filter></defaultStorageSettings>
+    </building>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<CollectionBucketFull>Collection bucket is full. Empty it.</CollectionBucketFull>
+	<CollectionBucketContents>Urine bottles {0} / {2}. Feces {1} / {2}.</CollectionBucketContents>
+	<PourUrineOnFire>Pour urine on a fire</PourUrineOnFire>
+	<PourUrineNoFire>There is no fire there.</PourUrineNoFire>
+	<FertilizeWithUrine>Fertilize soil with urine</FertilizeWithUrine>
+	<FertilizeUrineBadSoil>Urine fertilizer needs diggable soil.</FertilizeUrineBadSoil>
+</LanguageData>

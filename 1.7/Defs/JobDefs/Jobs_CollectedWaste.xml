@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<JobDef>
+		<defName>EmptyCollectionBucket</defName>
+		<driverClass>CollectedWaste.JobDriver_EmptyCollectionBucket</driverClass>
+		<reportString>emptying TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>PourUrine</defName>
+		<driverClass>CollectedWaste.JobDriver_PourUrine</driverClass>
+		<reportString>pouring urine on a fire.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>FertilizeWithUrine</defName>
+		<driverClass>CollectedWaste.JobDriver_FertilizeWithUrine</driverClass>
+		<reportString>fertilizing soil with urine.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+</Defs>

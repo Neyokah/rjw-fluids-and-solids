@@ -1,0 +1,163 @@
+RJW FLUIDS AND SOLIDS 1.3.0 — VALIDATION
+2026-10-16 (Pacific/Guam)
+
+Build target: the currently installed RimWorld 1.7 Mac compatibility runtime (.NET 10).
+The current ModsConfig version is 1.7.4980 rev60.
+References: the installed Assembly-CSharp, UnityStubs, Harmony 1.7,
+RJW 1.6/RJW.dll, Lactation Expansion 1.6/EuterpeMilkyTitfuck.dll and
+S16 1.6/s16-extension.dll, Dubs Bad Hygiene and Multiplayer API. Tests also read
+RainsS16Addons.dll, actual S16 toy XML and Coffee’s original lactation definitions.
+Optional network XML is additionally parsed against the installed PipeSystem 1.7
+assembly in the test fixture. No dependency binaries are bundled.
+
+RESULT: Release build succeeded with zero warnings and zero errors.
+RESULT: 11,071 automated checks passed under the game's own compatibility runtime.
+
+Verified:
+- Every production Harmony patch installs on the installed target methods.
+- All custom XML field names exist in installed game types.
+- The real XML parser reads the wall's roof, movement, sight, wind, wall and
+  attachment flags, zero costs, zero deconstruction recovery, brown tint and
+  lack of research prerequisites.
+- The real XML parser reads all three gene definitions, custom classes, age thresholds,
+  complexity, metabolism and positive random-generation weights.
+- 10,000 randomized accounting cases stay within storage, requested production
+  and available food, without negative transfers or overcharging.
+- One continuously fed simulated day at average size stores 2 nutrition and
+  consumes 1 nutrition, subject to floating-point tolerance.
+- Full storage costs nothing. A nearly full reservoir charges only its actual gain.
+- The existing Lactation Expansion collection method yields 40 of its existing
+  milk items from a full average-size reservoir and empties that same reservoir.
+- Tiny breasts produce milk; nipples-only, absent and missing breast parts do not.
+- Larger sizes and additional breasts increase production.
+- Very small output settings retain capacity for at least one collectible item.
+- Eligibility is independent of sex; biological age 15 is inactive, 16 is active.
+- Malnutrition pauses production and recovery resumes it.
+- Repeated activation and the existing Wet nurse gene reuse a single condition.
+- Output and capacity do not compound across repeated stat refreshes.
+- Dependency speed and milk stat multipliers are applied once; displayed daily
+  production agrees with the gene's per-tick rate.
+- Suppression immediately restores the dependency's ordinary output and food cost;
+  suppression/removal restore ordinary timed lactation decay.
+- Removal preserves the shared lactation condition and stored milk.
+- Forced construction rejects noncarriers, and blueprint/frame/completion gates
+  require an active gene. Suppression blocks ongoing wall construction eligibility.
+- Ordinary construction is unaffected.
+- The actual Scribe serializer round-trips native milk storage and mod settings.
+  The gene uses the game's ordinary gene save format, with no custom persisted state.
+- Invalid saved settings are normalized to safe defaults.
+
+Squirter verification:
+- Shared RJW completion callbacks produce three of the existing S16 item.
+- Adult partnered activity and solo events use the same baseline yield.
+- Repeated, reconstructed and late callbacks do not duplicate earlier output.
+- Separate event ordinals within one job, even in the same tick, pay separately.
+- Primary and fallback signals for the same event are deduplicated in either order.
+- Age 18 and an adult life stage are required; under-18, child and mixed child/adult
+  stages, and nonadult partners, do not trigger production.
+- Suppression/removal stop new output. Ordinary ticks do not generate new output.
+- All seven resource-producing S16 toy/apparel definitions were parsed from the
+  installed XML and recognized, using their real stage thresholds and baseline counts.
+- Entering each completion stage emits exactly 3x its baseline; holding the same
+  stage emits nothing more. A reset/new cycle emits again, including skipped intervals.
+- The real S16 periodic SpawnItem method is bypassed for carriers and runs unchanged
+  for noncarriers, preventing a second timed stream of the same items.
+- Failed and partial item placement conserve the queued balance. Stacks split at
+  the existing item limit. Only placement callbacks debit the queue.
+- Real Scribe save/load preserves pending items, pawn/gene references and the
+  active-job event receipt. Replaying that event after load does not pay again;
+  a new event still pays normally.
+
+Waste and Coffee verification:
+- Native XML parses the feces projectile's impact class, 1 damage, zero added armor
+  penetration and 600-tick fallback nausea duration. All projectile fields exist.
+- Vomiting eligibility exhaustively covers flesh/non-flesh, alive/dead, upright/downed,
+  food needs, shield blocking and cooldown. The 30% boundary is tested.
+- Missing ammo cannot be consumed; a stack loses one unit per successful debit.
+- The resource definition has zero food-poisoning chance. The targeted ingestion
+  guard skips feces and preserves other food/null-source poisoning calls.
+- Eight bucket uses fill both outputs; a ninth cannot overflow.
+- Failed, partial and multi-stack waste placements debit only confirmed output.
+- Real DBH bucket ExposeData and native Scribe preserve both stored output counts.
+- Native BackCompatibility lookup maps old standalone wall names to the gene wall
+  while leaving ordinary definitions alone.
+- Each approved/disapproved/acceptable waste precept replaces only its own taste
+  penalty. Repeated evaluation cannot duplicate thoughts. Unrelated thoughts and
+  pawns without a relevant belief retain their normal behavior.
+- Coffee's actual installed XML is imported, optional unavailable dependencies
+  removed, adapted types resolved, and every top-level field validated.
+- Reapplying compatibility cannot duplicate Coffee definitions or pawn components.
+- SEX_BreastMilk appears once in Coffee's milk configuration. No second milk issue.
+- Raw milk and milk ingredients are recognized. Only actual ingestion updates
+  Coffee's consumption timestamp, which survives a real Scribe round trip.
+- Coffee milk thoughts retain their existing precept source and occur once.
+- Coffee speed/yield multiply output and capacity once; repeat recaches do not
+  compound. Buffed milk gain pays exactly half its actual added nutrition.
+- Coffee activation reuses the existing lactation condition. Its adapted role
+  requires adults even when the production gene activates at 16.
+
+Sealed storage and weapon settings:
+- Native storage XML selects triple-stack storage and restricts its fixed filter
+  to urine bottles and feces.
+- Native XML patch operations add stat parts to BOTH Beauty and Cleanliness,
+  including when one stat already has parts and the other does not.
+- Real stat-part transforms suppress only waste in sealed storage; loose waste,
+  ordinary shelves, removed contents and unrelated items retain normal values.
+- Configured range/probability change the weapon policy. Zero and 100% vomiting
+  settings work. Native Scribe persists range, probability and cooldown settings.
+- Invalid values are restored/clamped to the supported ranges.
+- Original generated container and projectile PNGs were inspected visually.
+
+Version 1.3.0 wall and Progression verification:
+- Rough and smooth definitions retain 20 HP and zero material recovery. Both are
+  nonflammable, airtight, roof-supporting walls with the expected stone atlases.
+- Rough->smooth and smooth->rough XML references agree. Native IsSmoothable and
+  IsSmoothed recognize the linked variants; smooth walls cannot be smoothed again.
+- The smooth variant has no direct build command. Gene checks recognize both forms
+  and their frame definitions, including suppressed/noncarrier restrictions.
+- Progression bucket/barrel research is added only when matching projects exist.
+- Medieval Overhaul, Milk Based Drugs and RJW Gastronomy receive one milk category
+  entry each. Reapplying compatibility makes no further changes.
+- The separate breast-milk pipe network and all five structure templates use their
+  own pipe-net identifier. Both endpoints use SEX_BreastMilk; animal-milk endpoints
+  retain Milk. Normal research is copied from the installed templates.
+- New network and component XML parse using the installed PipeSystem types.
+  Every network/component field is checked against that assembly.
+- Optional modules absent: no new structures or dangling category/research links.
+- Storage protection survives a building-class change through its definition marker.
+- Framework-style unspawned contents with a native ThingOwner retain sealing.
+  The fixture supplies holder membership without a world notification manager.
+
+Test environment:
+Headless integration fixtures using the installed binaries, not replacement game
+implementations. Fixtures provide baseline stat values, minimal pawn definitions,
+clock access, baseline gene ticking, map-free health notifications, item creation
+and placement callbacks. Storage tests supply slot-group membership without a map.
+Actual S16 completion definitions and methods are used.
+The actual production patches, eligibility logic, external lactation component,
+external collection method, XML parser and Scribe serialization execute normally.
+Tests neither open nor modify the player's saves or active mod configuration.
+
+Package checks:
+XML syntax, installed API fields, dependency identifiers, stable definition names,
+Coffee adapted type references and the native storage patch are checked. All three
+gene icons are 128x128 RGBA PNGs; the container is 128x128 and projectile 64x64.
+The packaged assembly is byte-checked against the tested source build.
+
+Not yet verified interactively:
+The full mod list loading in a graphical game session; Architect menu appearance,
+linked wall visuals and drawing tools; a pawn completing a wall on an actual map;
+routine milking job scheduling; actual toy/job animations and dropped-item visuals;
+actual throwing pathfinding, projectile flight/interception and vomiting jobs;
+a hauling pawn using sealed storage and a room recomputing its total cleanliness;
+actual smoothing jobs, powered breast-milk pipe transfers and Progression research
+menus or processor recipes with the entire installed collection;
+Coffee menus/roles with the entire active mod stack;
+or a full colony save/reload with every installed
+mod active. Wall behavior was verified through definition flags and eligibility
+gates, not a simulated map. These are live-game smoke checks, not claimed test passes. Equal Milking is not
+active in this installation; its already-loaded module branch has not been exercised
+in a live game. The user’s saves were never opened or modified.
+
+Reproduce the automated checks on this Mac:
+python3 Tests/run_tests.py

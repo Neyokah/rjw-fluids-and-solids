@@ -1,0 +1,45 @@
+"""Run integration fixtures under this Mac's installed RimWorld compatibility runtime.
+
+The test harness fakes map notifications and baseline pawn stats. Production patches,
+dependency collection methods, XML parsing, eligibility and Scribe run as real methods.
+No game configuration or saves are opened or modified.
+"""
+from pathlib import Path
+import os
+import json
+import hashlib
+import shutil
+import subprocess
+import tempfile
+
+mod = Path(__file__).resolve().parents[1]
+game = Path(os.environ['RIMWORLD_MANAGED_DIR'])
+with tempfile.TemporaryDirectory(prefix='UsefulGenesTests-') as tmp:
+    tmp = Path(tmp)
+    build = tmp / 'build'
+    runtime = tmp / 'runtime'
+    runtime.mkdir()
+    subprocess.run(['dotnet', 'build', str(mod / 'Tests/Tests.csproj'), '-c', 'Release', '-o', str(build), '--nologo'], check=True)
+    packaged = mod / '1.7/Assemblies/Umrae.UsefulGenes.dll'
+    if hashlib.sha256(packaged.read_bytes()).digest() != hashlib.sha256((build / packaged.name).read_bytes()).digest():
+        raise RuntimeError('Packaged DLL differs from the tested source build. Rebuild Source/UsefulGenes.csproj first.')
+    print('Packaged DLL matches the tested source build.', flush=True)
+    for p in game.iterdir():
+        if p.suffix in ('.dll', '.dylib'):
+            (runtime / p.name).symlink_to(p)
+    for p in build.iterdir():
+        if p.is_file() and not p.name.startswith(('Assembly-CSharp', 'UnityStubs')):
+            dest = runtime / p.name
+            if dest.is_symlink():
+                dest.unlink()
+            shutil.copy2(p, dest)
+    shutil.copy2(game / 'RimWorld.runtimeconfig.json', runtime / 'UsefulGenes.Tests.runtimeconfig.json')
+    deps = json.loads((game / 'RimWorld.deps.json').read_text())
+    extra = json.loads((build / 'UsefulGenes.Tests.deps.json').read_text())
+    target = deps['targets'][deps['runtimeTarget']['name']]
+    for name, value in next(iter(extra['targets'].values())).items():
+        if name.split('/')[0] not in {n.split('/')[0] for n in target}:
+            target[name] = value
+            deps['libraries'][name] = extra['libraries'][name]
+    (runtime / 'UsefulGenes.Tests.deps.json').write_text(json.dumps(deps))
+    subprocess.run([str(runtime / 'UsefulGenes.Tests')], cwd=mod, check=True)

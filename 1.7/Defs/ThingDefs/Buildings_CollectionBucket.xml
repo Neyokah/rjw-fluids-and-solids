@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BasedHygieneMom">
+		<defName>CollectionBucket</defName>
+		<label>collection bucket</label>
+		<description>A bucket used in place of a toilet. It does not connect to sewage pipes. Each use stores one urine bottle and one unit of feces until a hauler empties it. A full bucket cannot be used.</description>
+		<thingClass>CollectedWaste.Building_CollectionBucket</thingClass>
+		<graphicData>
+			<texPath>DBH/Things/Building/cleanBucket</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Cutout</shaderType>
+			<drawSize>1.05</drawSize>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsHygiene</li>
+		</thingCategories>
+		<designationCategory>Hygiene</designationCategory>
+		<tickerType>Rare</tickerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.15</fillPercent>
+		<pathCost>8</pathCost>
+		<rotatable>false</rotatable>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<stuffCategories>
+			<li>Woody</li>
+			<li>Metallic</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>20</costStuffCount>
+		<defaultStuff>WoodLog</defaultStuff>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>400</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-8</Beauty>
+			<Cleanliness>-8</Cleanliness>
+			<Mass>6</Mass>
+		</statBases>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+</Defs>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef><defName>RFS_ThrowFeces</defName><driverClass>Umrae.UsefulGenes.JobDriver_ThrowFeces</driverClass><reportString>Throwing feces at TargetB.</reportString></JobDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>RFS_FecesProjectile</defName><label>thrown feces</label><thingClass>Umrae.UsefulGenes.Projectile_Feces</thingClass>
+    <graphicData><texPath>Things/Projectile/Feces</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.4</drawSize></graphicData>
+    <projectile><damageDef>Blunt</damageDef><damageAmountBase>1</damageAmountBase><armorPenetrationBase>0</armorPenetrationBase><speed>22</speed></projectile>
+  </ThingDef>
+  <HediffDef><defName>RFS_FecesNausea</defName><label>feces nausea</label><description>Recently made nauseous by a thrown lump of feces. Briefly prevents repeated vomiting. The duration is controlled by the mod settings.</description><hediffClass>HediffWithComps</hediffClass><isBad>true</isBad><comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>600</disappearsAfterTicks></li></comps></HediffDef>
+</Defs>

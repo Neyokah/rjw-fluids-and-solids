@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThoughtDef>
+		<defName>DrankUrine</defName>
+		<durationDays>0.5</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>drank urine</label>
+				<description>I drank urine. It was warm and awful.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>AteFeces</defName>
+		<durationDays>0.5</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>ate feces</label>
+				<description>I was hungry enough to eat feces. I can still taste it.</description>
+				<baseMoodEffect>-12</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

@@ -1,0 +1,46 @@
+PROGRESSION COMPATIBILITY AUDIT — 1.3.0
+2026-10-16 Pacific/Guam
+
+Inspected the local active-mod configuration and matched metadata for 1,550 of
+1,556 active entries. Core/DLC and entries without local metadata account for the
+unmatched entries. ModsConfig reports RimWorld 1.7.4980 rev60. Build and regression
+fixtures use the currently installed binaries, rather than relying on that label.
+
+Targeted installed modules: Progression Core, Storage, Kitchen, Genetics,
+Production, Agriculture, Temperature and Arsenal; Adaptive Storage Framework;
+Medieval Overhaul; Milk Pipe Network; Milk Based Drugs; RJW Unleashed Gastronomy;
+RJW Genes, Lactation Expansion and the local RJW Stack Compatibility patch.
+
+Changes:
+- Collection bucket follows VFET_Construction when Progression already assigns
+  that research to PitLatrine. Sealed storage follows Ferny_Barrels when present.
+- SEX_BreastMilk is recognized by the installed Medieval Overhaul, milk-drug and
+  RJW Gastronomy milk categories, with no duplicate category entries.
+- A separate breast-milk pipe network clones the installed Milk Pipe Network's
+  own pipe/tank/drain/tap templates and routes the original breast-milk item both
+  into and out of storage. Animal milk does not acquire human-milk identity.
+- New pipe endpoints do not register to the animal-milk nutrient-paste grinder.
+- Sealing follows a definition marker and ThingOwner storage, so framework class
+  replacements or held contents do not silently lose the cleanliness protection.
+- Rough and polished fecal walls use normal smoothing links and remain 20 HP.
+  They are constructed walls, not naturally generated mineral deposits. They
+  do not introduce stone chunks, mining yields, or another world-gen stone type.
+
+Checked without changing behavior:
+- Progression Genetics uses native gene definitions and research/quest changes.
+  These genes retain standard availability, extraction and active-gene checks.
+- Progression Production/Arsenal do not require a new weapon/research tree for
+  the manual feces throw. Existing processing recipes retain their normal benches.
+- Progression Agriculture/DBH receive their normal biosolids and fertilizer calls.
+- Progression Temperature receives nonflammable, airtight walls; no global
+  temperature, oxygen or ventilation values are patched.
+- Gene-driven production continues to use the single Lactation Expansion reservoir;
+  RJW Genes and Coffee do not add another production loop through this integration.
+
+Limits:
+Automated native-API/XML/policy/Scribe tests are not a full colony simulation with
+all 1,556 mods loaded. Real hauling, research menus, processor recipes, powered pipe
+transport and smoothing on a map still need a live-game smoke test. Processor mods
+that discard ingredient provenance may not allow Coffee to identify human milk in
+finished products; no blanket human-milk tag is applied to animal-milk cheeses.
+No dependency files or existing colony saves are edited.

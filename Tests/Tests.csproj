@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>disable</Nullable>
+    <AssemblyName>UsefulGenes.Tests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Source/UsefulGenes.csproj" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameDir)/Assembly-CSharp.dll" />
+    <Reference Include="UnityStubs" HintPath="$(GameDir)/UnityStubs.dll" />
+    <Reference Include="PipeSystem" HintPath="$(Workshop)/2023507013/1.7/Assemblies/PipeSystem.dll" />
+    <Reference Include="RJW" HintPath="$(RjwDir)/RJW.dll" />
+    <Reference Include="s16-extension" HintPath="$(GameRoot)/Mods/s16-extentions-1.5/1.6/Assemblies/s16-extension.dll" />
+    <Reference Include="RainsS16Addons" HintPath="$(GameRoot)/Mods/s16-extentions-1.5/1.6/Assemblies/RainsS16Addons.dll" />
+    <Reference Include="BadHygiene" HintPath="$(Workshop)/836308268/1.6/Assemblies/BadHygiene.dll" />
+    <Reference Include="0MultiplayerAPI" HintPath="$(RjwDir)/0MultiplayerAPI.dll" />
+    <Reference Include="EuterpeMilkyTitfuck" HintPath="$(Workshop)/3489491945/1.6/Assemblies/EuterpeMilkyTitfuck.dll" />
+    <Reference Include="0Harmony" HintPath="$(HarmonyPath)" />
+  </ItemGroup>
+</Project>

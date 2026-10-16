@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Umrae.UsefulGenes</AssemblyName>
+    <Version>1.3.0</Version>
+    <OutputPath>../1.7/Assemblies/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>none</DebugType>
+
+    
+
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp" HintPath="$(GameDir)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="UnityStubs" HintPath="$(GameDir)/UnityStubs.dll" Private="false" />
+    <Reference Include="RJW" HintPath="$(GameRoot)/Mods/rjw/1.6/Assemblies/RJW.dll" Private="false" />
+    <Reference Include="BadHygiene" HintPath="$(Workshop)/836308268/1.6/Assemblies/BadHygiene.dll" Private="false" />
+    <Reference Include="0MultiplayerAPI" HintPath="$(Workshop)/836308268/1.6/Assemblies/0MultiplayerAPI.dll" Private="false" />
+    <Reference Include="s16-extension" HintPath="$(GameRoot)/Mods/s16-extentions-1.5/1.6/Assemblies/s16-extension.dll" Private="false" />
+    <Reference Include="EuterpeMilkyTitfuck" HintPath="$(Workshop)/3489491945/1.6/Assemblies/EuterpeMilkyTitfuck.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(Workshop)/2009463077/1.7/Assemblies/0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>

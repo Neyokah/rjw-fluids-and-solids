@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<WorkGiverDef>
+		<defName>EmptyCollectionBucket</defName>
+		<label>empty collection bucket</label>
+		<giverClass>CollectedWaste.WorkGiver_EmptyCollectionBucket</giverClass>
+		<workType>Hauling</workType>
+		<verb>empty</verb>
+		<gerund>emptying</gerund>
+		<priorityInType>25</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+</Defs>
