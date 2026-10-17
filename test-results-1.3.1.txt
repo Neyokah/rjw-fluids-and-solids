@@ -1,0 +1,17 @@
+rjw-fluids-and-solids 1.3.1 — verification update (2026-10-17 Pacific/Guam)
+Game: RimWorld 1.7.4980 rev60; Assembly-CSharp 1.7.9785.1822
+Runtime: installed Mac .NET 10 compatibility runtime; RJW 1.6.9730.20937
+Production and test builds: zero warnings and errors.
+Packaged DLL exactly matches the tested source build.
+PASS: 11,081 checks.
+- All custom XML fields exist on installed game types.
+- Shared GeneCategoryDef parses with the intended name and label; all three
+  GeneDefs reference it. Normal gene identities, effects and costs remain stable.
+- Parsed rough wall HP remains 20; smoothed wall HP is 50.
+- Native smoothing links, roof/blocking/airtight/nonflammable properties and
+  zero material recovery retain their existing behavior.
+- Existing production, storage, waste, compatibility and Scribe fixtures pass.
+Map notifications, placement and baseline stats use controlled fixtures.
+No live smoothing animation, visual gene editor, complete colony save/reload,
+full mod-stack gameplay, or multiplayer session was tested.
+

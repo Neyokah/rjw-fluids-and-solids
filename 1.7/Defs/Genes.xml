@@ -3,13 +3,13 @@
   <GeneDef>
     <defName>UG_FecalWalls</defName>
     <label>fecal walls</label>
-    <description>Carriers can build very fragile, stone-like walls from their own waste without construction materials. Designate fecal walls in the Structure menu. Only carriers with this gene active can construct them. Finished walls can be polished with the normal Smooth Surface order; rough and smoothed walls both have 20 hit points.</description>
+    <description>Carriers can build very fragile, stone-like walls from their own waste without construction materials. Designate fecal walls in the Structure menu. Only carriers with this gene active can construct them. Finished walls can be polished with the normal Smooth Surface order; rough walls have 20 hit points and smoothed walls have 50 hit points.</description>
     <iconPath>UI/Genes/UG_FecalWalls</iconPath>
-    <displayCategory>Ability</displayCategory>
-    <displayOrderInCategory>950</displayOrderInCategory>
+    <displayCategory>UG_FluidsAndSolids</displayCategory>
+    <displayOrderInCategory>0</displayOrderInCategory>
     <biostatCpx>1</biostatCpx><biostatMet>0</biostatMet><biostatArc>0</biostatArc>
     <selectionWeight>1</selectionWeight>
-    <customEffectDescriptions><li>Build smoothable, nonflammable fecal walls without materials (20 hit points, even after smoothing).</li></customEffectDescriptions>
+    <customEffectDescriptions><li>Build smoothable, nonflammable fecal walls without materials (20 hit points rough; 50 after smoothing).</li></customEffectDescriptions>
   </GeneDef>
   <GeneDef>
     <defName>UG_PermanentLactation</defName>
@@ -17,8 +17,8 @@
     <description>Carriers aged 16 or older with RJW breasts larger than nipples continuously produce milk, regardless of sex. Larger and additional breasts produce and store more. Malnutrition pauses production; recovery automatically restarts it. Uses Lactation Expansion's existing milk and collection jobs. By default, average breasts produce four times the normal milk and consume half the nutrition actually stored. Production and food cost are configurable in RJW Fluids and Solids settings.</description>
     <geneClass>Umrae.UsefulGenes.Gene_PermanentLactation</geneClass>
     <iconPath>UI/Genes/UG_PermanentLactation</iconPath>
-    <displayCategory>Reproduction</displayCategory>
-    <displayOrderInCategory>65</displayOrderInCategory><minAgeActive>16</minAgeActive>
+    <displayCategory>UG_FluidsAndSolids</displayCategory>
+    <displayOrderInCategory>10</displayOrderInCategory><minAgeActive>16</minAgeActive>
     <biostatCpx>1</biostatCpx><biostatMet>-1</biostatMet><biostatArc>0</biostatArc>
     <selectionWeight>1</selectionWeight>
     <customEffectDescriptions>
@@ -33,8 +33,8 @@
     <description>Adult carriers produce three times the normal love-juice item yield on reaching orgasm. Produces three love-juice items per RJW orgasm, including partnered activity and masturbation. Supported S16 toys produce three times their normal item count at the orgasm stage, replacing their timed item drops for carriers. Uses S16's existing love juice. Active from age 18.</description>
     <geneClass>Umrae.UsefulGenes.Gene_Squirter</geneClass>
     <iconPath>UI/Genes/UG_Squirter</iconPath>
-    <displayCategory>Reproduction</displayCategory>
-    <displayOrderInCategory>66</displayOrderInCategory><minAgeActive>18</minAgeActive>
+    <displayCategory>UG_FluidsAndSolids</displayCategory>
+    <displayOrderInCategory>20</displayOrderInCategory><minAgeActive>18</minAgeActive>
     <biostatCpx>1</biostatCpx><biostatMet>-1</biostatMet><biostatArc>0</biostatArc>
     <selectionWeight>1</selectionWeight>
     <customEffectDescriptions>

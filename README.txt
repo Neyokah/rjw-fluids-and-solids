@@ -1,5 +1,5 @@
 RJW FLUIDS AND SOLIDS
-Version 1.3.0 | Built for your installed RimWorld 1.7 Mac compatibility runtime
+Version 1.3.1 | Built for your installed RimWorld 1.7 Mac compatibility runtime
 
 INSTALL
 1. Close RimWorld. Copy the RJWFluidsAndSolids folder into RimWorld/Mods.
@@ -29,21 +29,28 @@ The standalone material-built FecalWall is removed. Saved copies/blueprints/fram
 resolve to the existing gene-built UG_FecalWall. Unfinished construction then requires
 an active wall-gene builder. Finished walls continue to support roofs.
 
+GENE CATEGORY
+Fecal walls, Permanent lactation and Squirter all appear under the
+RJW Fluids and Solids category in the gene editor.
+
 FECAL WALLS
 Designate "fecal wall" under Architect > Structure using the normal wall drawing
 tools. Only pawns with the active Fecal walls gene can construct the blueprints and
 frames, including forced orders. Construction work must be enabled as usual.
 
-Walls cost no materials, take 650 work and have only 20 hit points. Both rough and
-smoothed versions stay extremely fragile. They block sight, movement and wind,
+Walls cost no materials and take 650 work. Rough walls have 20 hit points;
+smoothed walls have 50. They block sight, movement and wind,
 support roofs, are airtight and do not burn. Rough walls use RimWorld's natural
 rock atlas with a brown tint; smooth walls use its polished rock atlas.
 
 After construction, use Architect > Orders > Smooth Surface and drag over the rough
 walls. Normal Construction workers can polish them using the game's normal smoothing
 job and work requirement. Smoothing improves beauty from -2 to +1 and cleanliness
-from -0.01 to 0, while retaining 20 HP. The polished version is created by smoothing,
+from -0.01 to 0, and raises maximum hit points from 20 to 50. The polished version is created by smoothing,
 rather than appearing as a second free build command.
+
+Existing smoothed walls gain the new maximum after restarting and can be repaired
+normally; updating does not instantly heal damaged walls.
 
 Neither version yields materials when demolished or destroyed. Finished walls stay
 if the builder loses the gene. Roof support follows ordinary wall rules. Existing

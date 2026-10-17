@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 — 2026-10-17
+- Grouped Fecal walls, Permanent lactation and Squirter under one RJW Fluids and Solids gene category.
+- Increased smoothed fecal walls to 50 HP; rough walls remain 20 HP.
+- Updated in-game descriptions and definition integration tests. Existing identifiers and gene effects remain unchanged.
+
 ## 1.3.0
 - Added rough/polished fragile wall smoothing and targeted Progression research placement.
 - Added milk processing/category integration and a separate optional milk pipe network.

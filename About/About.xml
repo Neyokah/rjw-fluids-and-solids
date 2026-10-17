@@ -3,10 +3,11 @@
   <name>RJW Fluids and Solids</name>
   <author>Umrae</author>
   <packageId>umrae.usefulgenes</packageId>
+  <modVersion>1.3.1</modVersion>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Biotech genes, DBH waste collection, throwable feces, urine and feces consumption precepts, and compatibility with Coffee’s milk beliefs. Includes Fecal walls, Permanent lactation and Squirter. Replaces DBH Collected Waste; disable the standalone version. Built for the installed RimWorld 1.7 runtime. Supports fragile smoothable stone-like walls, Progression research, Medieval Overhaul milk processing, and an optional separate breast-milk pipe network.</description>
+  <description>Biotech genes, DBH waste collection, throwable feces, urine and feces consumption precepts, and compatibility with Coffee’s milk beliefs. Includes Fecal walls, Permanent lactation and Squirter. Replaces DBH Collected Waste; disable the standalone version. Built for the installed RimWorld 1.7 runtime. Groups all three genes under RJW Fluids and Solids. Supports smoothable stone-like walls (20 HP rough, 50 HP smoothed), Progression research, Medieval Overhaul milk processing, and an optional separate breast-milk pipe network.</description>
   <modDependencies>
     <li>
       <packageId>ludeon.rimworld.biotech</packageId>

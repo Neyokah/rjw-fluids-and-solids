@@ -19,7 +19,7 @@ with tempfile.TemporaryDirectory(prefix='UsefulGenesTests-') as tmp:
     build = tmp / 'build'
     runtime = tmp / 'runtime'
     runtime.mkdir()
-    subprocess.run(['dotnet', 'build', str(mod / 'Tests/Tests.csproj'), '-c', 'Release', '-o', str(build), '--nologo'], check=True)
+    subprocess.run(['dotnet', 'build', str(mod / 'Tests/Tests.csproj'), '-c', 'Release', '-o', str(build), '--nologo', '--ignore-failed-sources', '-p:UseSharedCompilation=false', '-warnaserror'], check=True)
     packaged = mod / '1.7/Assemblies/Umrae.UsefulGenes.dll'
     if hashlib.sha256(packaged.read_bytes()).digest() != hashlib.sha256((build / packaged.name).read_bytes()).digest():
         raise RuntimeError('Packaged DLL differs from the tested source build. Rebuild Source/UsefulGenes.csproj first.')

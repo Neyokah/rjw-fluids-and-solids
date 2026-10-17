@@ -1,6 +1,6 @@
 # RJW Fluids and Solids
 
-**Version 1.3.0 · RimWorld 1.7 · Package ID `umrae.usefulgenes`**
+**Version 1.3.1 · RimWorld 1.7 · Package ID `umrae.usefulgenes`**
 
 A combined Biotech gene and resource mod for an RJW/Dubs Bad Hygiene setup. It includes gene-built walls, configurable milk production, an adult-only event-driven resource gene, collected waste, sealed storage, manual waste throwing, ideology precepts, and targeted milk-processing integrations.
 
@@ -8,7 +8,7 @@ A combined Biotech gene and resource mod for an RJW/Dubs Bad Hygiene setup. It i
 
 | Feature | Behavior |
 | --- | --- |
-| Fecal walls gene | Gene carriers construct material-free, fragile walls. Rough and polished variants remain **20 HP**, support roofs, block movement/sight/wind, are airtight and nonflammable, and yield no recovered material. Normal smoothing improves appearance. |
+| Fecal walls gene | Gene carriers construct material-free, fragile walls. Rough walls have **20 HP** and polished walls have **50 HP**. Both support roofs, block movement/sight/wind, are airtight and nonflammable, and yield no recovered material. Normal smoothing improves appearance and durability. |
 | Permanent lactation gene | Uses Lactation Expansion's existing reservoir and collection jobs. Eligible humanlike carriers start at biological age **16**; output depends on qualifying RJW anatomy. Production stops during malnutrition and charges only for actual milk stored. This is production logic, not an interaction trigger. |
 | Squirter gene | Adult-only event-driven resource output using supported RJW completion signals and installed S16 stages. Requires biological age **18+** and an adult developmental stage; partnered signals require adult humanlike participants. Does not initiate activities or change their frequency. |
 | Collection bucket | Collects one urine bottle and one feces per successful DBH use, up to eight of each. Empty manually or through hauling work. |
@@ -18,6 +18,8 @@ A combined Biotech gene and resource mod for an RJW/Dubs Bad Hygiene setup. It i
 | Milk compatibility | Reuses Coffee's existing beliefs and recognizes the supported milk item in processing categories. An optional separate pipe network preserves the milk item's identity. |
 
 Normal gene availability and extraction remain in use. Existing pawns do not automatically receive the new genes. All three genes have complexity 1 and no archite requirement; wall metabolism is 0, and each other gene's metabolism is −1 before other mods adjust it.
+
+All three custom genes—**Fecal walls**, **Permanent lactation**, and **Squirter**—appear under **RJW Fluids and Solids** in the gene editor.
 
 ## Installation
 
@@ -78,9 +80,11 @@ Keep one installed copy and retain a backup save. The package ID `umrae.usefulge
 
 The mod includes items, jobs, genes, structures, and saved queues. Removing it from an established colony is not guaranteed safe. Do not delete dependencies or swap between duplicate installations as a migration method.
 
+Existing smoothed walls gain the new 50 HP maximum after restarting; damaged walls can be repaired normally. No existing gene or wall identifiers changed.
+
 ## Verification status
 
-The original 1.3.0 integration run recorded **11,071 automated checks** involving real installed APIs, XML parsers, Harmony targets, and Scribe serialization, with controlled headless fixtures. Native colony pathfinding, animations, visual menus, hauling, smoothing, complete pipe transport, and a full mod-stack save/reload still need live-game checks. See `VALIDATION.txt`.
+The 1.3.1 integration run recorded **11,081 automated checks** involving real installed APIs, XML parsers, Harmony targets, and Scribe serialization, with controlled headless fixtures. Native colony pathfinding, animations, visual menus, hauling, smoothing, complete pipe transport, and a full mod-stack save/reload still need live-game checks. See `VALIDATION.txt`.
 
 ## Source, testing, and support
 

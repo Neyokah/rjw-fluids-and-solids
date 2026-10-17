@@ -70,7 +70,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>UG_SmoothedFecalWall</defName>
     <label>smoothed fecal wall</label>
-    <description>A polished fecal wall with a smooth stone surface. Still extremely fragile at 20 hit points, but more attractive and easier to keep clean. Created by smoothing a built fecal wall. Supports roofs and does not burn.</description>
+    <description>A polished fecal wall with a smooth stone surface. Stronger than the rough wall at 50 hit points, and more attractive and easier to keep clean. Created by smoothing a built fecal wall. Supports roofs and does not burn.</description>
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
@@ -86,7 +86,7 @@
     <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
     <uiIconColor>(0.40,0.26,0.12)</uiIconColor>
     <statBases>
-      <MaxHitPoints>20</MaxHitPoints>
+      <MaxHitPoints>50</MaxHitPoints>
       <WorkToBuild>650</WorkToBuild>
       <Flammability>0</Flammability>
       <Beauty>1</Beauty>

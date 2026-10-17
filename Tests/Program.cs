@@ -270,16 +270,22 @@ internal static class Program
         Check(smoothNode.SelectSingleNode("building/unsmoothedThing").InnerText == wall.defName, "smooth variant references the rough wall");
         wall.building.smoothedThing = smooth; smooth.building.unsmoothedThing = wall;
         Check(wall.IsSmoothable && !smooth.IsSmoothable && smooth.IsSmoothed, "native smoothing properties recognize both states without repeat smoothing");
-        Check(wall.statBases[0].value == 20 && smooth.statBases[0].value == 20, "rough and polished walls both retain 20 HP fragility");
+        Check(wall.statBases[0].value == 20 && smooth.statBases[0].value == 50, "smoothing raises maximum HP from 20 to 50");
         Check(wall.statBases[2].value == 0 && smooth.statBases[2].value == 0, "both wall variants are nonflammable");
         Check(wall.graphicData.texPath == "Things/Building/Linked/Rock_Atlas" && smooth.graphicData.texPath == "Things/Building/Linked/RockSmooth_Atlas", "rough and smooth surfaces use the game's actual stone atlases");
         Check(smooth.designationCategory == null && smoothNode.SelectSingleNode("designationCategory") == null, "smooth walls require smoothing rather than a second build command");
         Check(smooth.holdsRoof && smooth.blockLight && smooth.blockWind && smooth.building.isAirtight && wall.building.isAirtight, "both stone surfaces retain roof, sight, wind and airtight behavior");
         Check(smooth.costList.NullOrEmpty() && !smooth.leaveResourcesWhenKilled && smooth.resourcesFractionWhenDeconstructed == 0, "polishing creates no recovered resources");
+        var categoryDoc = new XmlDocument(); categoryDoc.Load(Path.Combine(folder, "GeneCategories.xml"));
+        var category = DirectXmlToObject.ObjectFromXml<GeneCategoryDef>(categoryDoc.DocumentElement.FirstChild, false);
+        Check(category.defName == "UG_FluidsAndSolids" && category.label == "RJW Fluids and Solids", "shared gene category parses with the intended label");
+        DefDatabase<GeneCategoryDef>.Add(category);
         var genesDoc = new XmlDocument(); genesDoc.Load(Path.Combine(folder, "Genes.xml"));
+        Check(genesDoc.DocumentElement.ChildNodes.OfType<XmlElement>().Count() == 3, "all three custom genes are covered");
         foreach (XmlElement node in genesDoc.DocumentElement.ChildNodes.OfType<XmlElement>())
         {
             var gene = DirectXmlToObject.ObjectFromXml<GeneDef>(node, false);
+            Check(node["displayCategory"]?.InnerText == category.defName, "every custom gene uses the common category");
             Check(gene.biostatCpx == 1 && gene.biostatArc == 0 && gene.selectionWeight > 0, "gene has normal genepack availability and specified complexity");
             if (gene.defName == "UG_PermanentLactation") Check(gene.geneClass == typeof(Gene_PermanentLactation) && gene.minAgeActive == 16 && gene.biostatMet == -1, "actual lactation gene type and activation age");
             if (gene.defName == "UG_Squirter") Check(gene.geneClass == typeof(Gene_Squirter) && gene.minAgeActive == 18, "Squirter has correct type and adult activation threshold");

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneCategoryDef>
+    <defName>UG_FluidsAndSolids</defName>
+    <label>RJW Fluids and Solids</label>
+    <displayPriorityInXenotype>399.173</displayPriorityInXenotype>
+    <displayPriorityInGenepack>399.173</displayPriorityInGenepack>
+  </GeneCategoryDef>
+</Defs>
